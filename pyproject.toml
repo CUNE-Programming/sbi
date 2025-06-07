@@ -5,7 +5,7 @@ authors = [
 ]
 description = "Sower Bible Institute"
 version = "0.0.0"
-requires-python = ">=3.13"
+requires-python = ">=3.11,<3.12"
 dependencies = [
     "django>=5.1","django-allauth>=65.2",
     "whitenoise>=6.8",
