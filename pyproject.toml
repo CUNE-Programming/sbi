@@ -1,0 +1,46 @@
+[project]
+name = "sbi"
+authors = [
+    { name = "Ian Kollipara", email = "ian.kollipara@cune.edu" },
+]
+description = "Sower Bible Institute"
+version = "0.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.1","django-allauth>=65.2",
+    "whitenoise>=6.8",
+    "django-rich>=1.13",
+    "environs[django]>=14.1.1",
+    "django-extensions>=3.2.3",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "django-browser-reload",
+    "django-simple-factory",
+    "ruff",
+    "ipdb",
+    "djade",
+    "coverage",
+    "tblib",
+]
+
+[tool.ruff.isort]
+force-single-line = true
+
+[tool.coverage.run]
+branch = true
+parallel = true
+omit = ["conf/*.py", "manage.py"]
+concurrency = ["multiprocessing"]
+source = ["."]
+command_line = "manage.py test --keepdb --parallel"
+
+[tool.coverage.report]
+omit = ["conf/*.py", "manage.py"]
+show_missing = true
+skip_covered = true
+
+[tool.ruff.lint.isort.sections]
+# Group all Django imports into a separate section.
+"django" = ["django"]

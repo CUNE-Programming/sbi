@@ -1,0 +1,6 @@
+// To learn more about SpruceCSS
+// Check out https://sprucecss.com/docs/
+
+@use '~sprucecss/scss/spruce' as *;
+
+@include generate-styles();
